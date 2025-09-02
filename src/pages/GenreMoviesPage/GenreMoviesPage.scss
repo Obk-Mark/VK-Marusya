@@ -1,0 +1,51 @@
+@use '@/styles/mixins' as *;
+
+.genre-movies-page {
+    &__back-link {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @include vp-767 {
+            gap: 8px;
+        }
+    }
+
+    &__back-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 40px;
+        height: 40px;
+
+        @include vp-767 {
+            width: 32px;
+            height: 32px;
+        }
+
+        svg {
+            width: 14px;
+            height: 22px;
+
+            @include vp-767 {
+                width: 11px;
+                height: 17px;
+            }
+        }
+    }
+
+    &__bottom-group {
+        align-self: center;
+
+        @include vp-767 {
+            align-self: stretch;
+        }
+    }
+    
+    &__show-btn {
+        @include vp-767 {
+            width: 100%;
+        }
+    }
+}

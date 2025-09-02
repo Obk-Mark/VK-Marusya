@@ -1,0 +1,28 @@
+@use '@/styles/mixins' as *;
+
+.random-movie {
+    padding: 32px 0 20px;
+
+    @include vp-767 {
+        padding: 0 0 20px;
+    }    
+
+    &__wrapper {
+        min-height: 552px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 1200px) {
+            min-height: 446px;
+        }
+
+        @include vp-1023 {
+            min-height: 373px;
+        }
+
+        @include vp-767 {
+            min-height: 610px;
+        }
+    }
+}

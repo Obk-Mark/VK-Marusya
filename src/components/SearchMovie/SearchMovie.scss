@@ -1,0 +1,161 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.search-movie {
+    flex-grow: 1;
+    $root: &;
+
+    &--desktop {
+        @include vp-767 {
+            display: none;
+        }
+    }
+
+    &--mobile {
+        display: none;
+
+        @include vp-767 {
+            display: block;
+        }
+    }
+
+    &__wrapper {
+        width: 100%;
+        position: relative;
+
+        @include vp-767 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 16px 20px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: $color-dark-green-90;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            pointer-events: none;
+            transition: clip-path $transition-1000;
+
+            &--active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                pointer-events: all;
+            }
+        }
+    }
+
+    &__input-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        border-radius: 8px;
+        background-color: $color-montana;
+        color: $color-white-50;
+
+        @media (max-width: 880px) {
+            padding: 6px 12px;
+        }
+
+        @include vp-767 {
+            padding: 15px 22px 16px 16px;
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        transition: color $transition-300;
+    }
+
+    &__field {
+        flex-grow: 1;
+        border: none;
+        background-color: transparent;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: $color-white;
+
+        &::placeholder {
+            transition: color $transition-300;
+        }
+
+        @media (max-width: 880px) {
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        @include vp-767 {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+
+        &:hover,
+        &:focus-visible {
+            outline: none;
+
+            &::placeholder {
+                color: $color-white-70;
+            }
+
+            #{$root}__icon {
+                color: $color-white-70;
+            }
+        }
+
+        &:-internal-autofill-selected {
+            background-color: transparent;
+        }
+    }
+
+    &__results {
+        z-index: 1000;
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+
+        border-radius: 8px;
+        padding: 8px;
+        background-color: $color-montana;
+
+        @include vp-767 {
+            position: static;
+            padding: 24px 20px;
+        }
+    }
+
+    &__close-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background-color: transparent;
+        color: inherit;
+        cursor: pointer;
+
+        opacity: 0;
+        transition: opacity $transition-300, color $transition-300;
+
+        &--block {
+            opacity: 1;
+        }
+
+        &:hover,
+        &:focus-visible {
+            outline: none;
+            color: $color-white-70;
+        }
+
+        @include vp-767 {
+            opacity: 1;
+        }
+    }
+}

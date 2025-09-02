@@ -1,0 +1,49 @@
+@use '@/styles/variables' as *;
+
+.genre-card {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid $color-white-25;
+    background-color: $color-dark-green;
+    box-shadow: 0px 0px 80px 0px $color-white-33;
+    transition: box-shadow $transition-300, border-color $transition-300;
+
+    text-decoration: none;
+    color: $color-white;
+
+    &:hover,
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0px 0px 80px 0px $color-white-70;
+    }
+
+    &__wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        object-position: top center;
+    }
+
+    &__name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        text-transform: capitalize;
+    }
+}

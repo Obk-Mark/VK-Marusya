@@ -1,0 +1,67 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.rating-span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    border-radius: 16px;
+    $root: &;
+
+    &--red {
+        background-color: $color-fire-brick;
+    }
+
+    &--gray {
+        background-color: $color-grey;
+    }
+
+    &--green {
+        background-color: $color-forest-green;
+    }
+
+    &--yellow {
+        background-color: $color-lucky;
+    }
+
+    &--small {
+        gap: 3px;
+        padding: 5px 8px;
+        font-size: 12px;
+        line-height: 16px;
+
+
+        #{$root}__icon {
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    &--very-small {
+        padding: 2px 8px;
+        gap: 4px;
+        font-size: 12px;
+        line-height: 16px;
+
+        #{$root}__icon {
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    &__icon {
+        width: 16px;
+        height: 16px;
+
+        use {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.movies-list {
+    &--genres-page {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(224px, auto));
+        gap: 64px 40px;
+
+        @include vp-1023 {
+            grid-template-columns: repeat(auto-fill, minmax(205px, auto));
+            gap: 24px;
+        }
+
+        @include vp-767 {
+            grid-template-columns: repeat(auto-fill, minmax(190px, auto));
+        }
+    }
+
+    &--desktop {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(224px, auto));
+        gap: 64px 40px;
+
+        @include vp-1023 {
+            grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+            gap: 25px;
+        }
+
+        @include vp-767 {
+            display: none;
+        }
+    }
+
+    &--mobile {
+        width: 100%;
+        display: none;
+        position: relative;
+
+        @include vp-767 {
+            display: block;
+        }
+    }
+
+    &__item,
+    &__slide {
+        width: 100%;
+        min-height: 336px;
+    }
+
+    &__swiper {
+        width: 100vw;
+        padding: 80px 20px;
+        margin: -80px -20px;
+        position: relative;
+
+        .swiper-slide {
+            height: auto;
+        }
+    }
+}

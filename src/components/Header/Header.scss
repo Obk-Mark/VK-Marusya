@@ -1,0 +1,221 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.header {
+    padding: 24px 0;
+    min-height: 96px;
+    $root: &;
+
+    @include vp-1023 {
+        padding: 15px 0;
+        min-height: 78px;
+    }
+
+    @include vp-767 {
+        min-height: 56px;
+        padding: 16px 0 8px;
+    }
+
+    &__wrapper {
+        min-height: 48px;
+        display: flex;
+        gap: 80px;
+        align-items: center;
+
+        @include vp-1023 {
+            gap: 60px;
+        }
+
+        @media (max-width: 880px) {
+            gap: 45px;
+        }
+
+        @include vp-767 {
+            min-height: 32px;
+            justify-content: space-between;
+            gap: 30px;
+        }
+    }
+
+    &__logo-link {
+        &:hover,
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &__logo-img {
+        width: 144px;
+        height: 32px;
+
+        @include vp-1023 {
+            width: 110px;
+            height: 24px;
+        }
+
+
+
+        @include vp-767 {
+            width: 100px;
+            height: 23px;
+        }
+
+        @media (max-width: 450px) {
+          width: 80px;
+            height: 18px;  
+        }
+    }
+
+    &__column {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        gap: 80px;
+
+        @include vp-1023 {
+            gap: 50px;
+        }
+
+        @media (max-width: 880px) {
+            gap: 45px;
+        } 
+
+        @include vp-767 {
+            flex-grow: 0;
+            gap: 20px;
+        }
+    }
+
+    &__central-group {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        @media (max-width: 880px) {
+            gap: 20px;
+        }
+
+        @include vp-767 {
+            flex-grow: 0;
+            gap: 20px;
+        }
+    }
+
+    &__link {
+        padding: 8px 0 5px;
+
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        color: $color-white;
+        text-decoration: none;
+        border-bottom: 1.5px solid transparent;
+        transition: border-color $transition-300, color $transition-300;
+
+        @include vp-1023 {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        @include vp-767 {
+            position: relative;
+            padding: 0;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: block;
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        &--active {
+            border-color: $color-heliotrope;
+
+            @include vp-767 {
+                border-color: transparent;
+            }
+        }
+
+        &:hover,
+        &:focus-visible {
+            outline: none;
+            color: $color-white-70;
+        }
+
+        &--home-page {
+            @include vp-767 {
+                display: none;
+            }
+        }
+    }
+
+    &__link-text {
+        @include vp-767 {
+            display: none;
+        }
+    }
+
+    &__link-icon {
+        display: none;
+
+        @include vp-767 {
+            display: block;
+        }
+    }
+
+    &__serch-desktop-wrapper {
+        flex-grow: 1;
+
+        @include vp-767 {
+            display: none;
+        }
+    }
+
+    &__search-mobile-wrapper {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: $color-dark-green-90;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        pointer-events: none;
+        transition: clip-path $transition-1000;
+
+        &--active {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            pointer-events: all;
+        }
+    }
+
+    &__search-btn {
+        display: none;
+
+        @include vp-767 {
+            display: block;
+        }
+    }
+
+    &__auth-group {
+        &--desktop {
+            @include vp-767 {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            display: none;
+
+            @include vp-767 {
+                display: block;
+            }
+        }
+    }
+}

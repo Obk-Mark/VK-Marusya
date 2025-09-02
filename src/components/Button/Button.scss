@@ -1,0 +1,125 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.btn {
+    padding: 16px 44px;
+    margin: 0;
+    background-color: transparent;
+    border: 1px solid $color-black-40;
+    border-radius: 28px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: $color-white;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: background-color $transition-300;
+
+    @include vp-767 {
+        padding: 16px 38px;
+    }
+
+    &:hover,
+    &:focus-visible {
+        outline: none;
+    }
+
+    &--white {
+        color: $color-black;
+        background-color: $color-white;
+        border: none;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $color-white-70;
+        }
+    }
+
+    &--blue {
+        background-color: $color-cornflower-blue;
+        border: none;
+        padding: 16px 48px;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $color-slate-blue;
+        }
+    }
+
+    &--night-rider {
+        background-color: $color-night-rider;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $color-white-25;
+        }
+    }
+
+    &--montana {
+        background-color: $color-montana;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $color-white-25;
+        }
+    }
+
+    &--icon {
+        padding: 16px 20px;
+
+        @include vp-767 {
+            padding: 16px 21px;
+        }
+
+        &-white {
+            color: $color-white;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .close-icon-small {
+            width: 14px;
+            height: 14px;
+        }
+
+        &--liked {
+            color: $color-perano;
+        }
+    }
+
+    &--icon-no-padding {
+        position: relative;
+        padding: 0;
+        width: 24px;
+        height: 24px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    &--big {
+        width: 100%;
+    }
+
+    &--curcle {
+        padding: 12px;
+        border-radius: 50%;
+    }
+}

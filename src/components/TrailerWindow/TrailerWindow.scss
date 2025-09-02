@@ -1,0 +1,217 @@
+@use '@/styles/mixins' as *;
+
+.trailer-window {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $color-dark-green-90;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  $root: &;
+
+  &__wrapper {
+    width: 1032px;
+    padding-right: 72px;
+    margin-left: 72px;
+    height: 540px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+
+    &:hover {
+      #{$root}__close-btn {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    @media (max-width: 1120px) {
+      width: 880px;
+      padding-right: 60px;
+      margin-left: 60px;
+    }
+
+    @include vp-1023 {
+      width: calc(100% - 80px);
+      margin-left: 60px;
+      padding-right: 60px;
+    }
+
+    @include vp-767 {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 212px;
+    }
+
+    @include mobile-landscape {
+      height: 100%;
+      width: calc(100vw - 149px);
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__video-container {
+    position: relative;
+    width: 960px;
+    height: 100%;
+    border: 1px solid $color-white-50;
+    background-color: $color-montana;
+
+    @include vp-1023 {
+      width: 100%;
+    }
+
+    @include vp-767 {
+      border: none;
+    }
+
+    @include mobile-landscape {
+      width: 100%;
+      border: none;
+    }
+  }
+
+  &__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__video {
+    position: relative;
+    z-index: 1;
+    border: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    position: absolute;
+    z-index: 10;
+    bottom: 24px;
+    left: 20px;
+    right: 20px;
+
+    pointer-events: none;
+    display: block;
+    padding: 24px 40px;
+    background-color: $color-dark-green-50;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: clip-path $transition-1000;
+
+    @include vp-767 {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: translateY(100%);
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include mobile-landscape {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    &--active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+  &__state-indicator {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+    line-height: 40px;
+    background-color: $color-white;
+    color: $color-black;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity $transition-300;
+    pointer-events: none;
+
+    &--active {
+      opacity: 1;
+    }
+
+    @include vp-767 {
+      width: 64px;
+      height: 64px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include mobile-landscape {
+      width: 64px;
+      height: 64px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity $transition-300, background-color $transition-300;
+
+    @include vp-1023 {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    @include vp-767 {
+      padding: 0;
+      top: 8px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+    }
+
+    @include mobile-landscape {
+      opacity: 1;
+      pointer-events: all;
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      top: 16px;
+      right: 16px;
+    }
+
+    svg {
+      @include vp-1023 {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}
