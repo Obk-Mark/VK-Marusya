@@ -50,7 +50,7 @@ const GenreMoviesPage = () => {
                     <NavLink className='genre-movies-page__back-link' to={'/genres'} >
                         <div className="genre-movies-page__back-icon">
                             <svg viewBox="0 0 14 22">
-                                <use xlinkHref="/images/sprite.svg#back-arrow-icon" />
+                                <use xlinkHref="./images/sprite.svg#back-arrow-icon" />
                             </svg>
                         </div>
                         <h2 className="section__title genre-movies-page__title">{russianGenreName}</h2>

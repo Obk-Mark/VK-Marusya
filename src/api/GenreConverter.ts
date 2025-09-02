@@ -31,7 +31,7 @@ const genreTranslations: Record<string, string> = {
   "tv-movie": "телефильмы"
 };
 
-const genresImagesFolder = "/images/genres-images";
+const genresImagesFolder = "./images/genres-images";
 
 const genreImages: Record<string, string> = {
   "action": `${genresImagesFolder}/action`,
@@ -86,7 +86,7 @@ export function getGenreObject(englishGenre: string): TGenreObject {
   const GenreObject = {
     originName: englishGenre,
     name: getRussianGenre(englishGenre),
-    image: genreImages[englishGenre] || "/images/empty-poster"
+    image: genreImages[englishGenre] || "./images/empty-poster"
   }
 
   return GenreObject;

@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "serve": "serve dist -s -p 3000",
     "serve:prod": "serve dist -s -l 4173",
-    "deploy": "npm run build && gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d dist -b gh-pages-deploy",
     "predeploy": "npm run build"
   },
   "dependencies": {

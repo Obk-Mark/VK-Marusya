@@ -36,9 +36,9 @@ export const AuthForm = () => {
         <div className="auth-form">
             <div className="auth-form__block">
                 <picture className="auth-form__logo">
-                    <source srcSet="/images/logo--black@2x.webp 2x, /images/logo--black.webp 1x" type="image/webp" />
-                    <source srcSet="/images/logo--black@2x.png 2x" type="image/png" />
-                    <img src="/images/logo--black.png" />
+                    <source srcSet="./images/logo--black@2x.webp 2x, ./images/logo--black.webp 1x" type="image/webp" />
+                    <source srcSet="./images/logo--black@2x.png 2x" type="image/png" />
+                    <img src="./images/logo--black.png" />
                 </picture>
                 {renderForm()}
                 <Button

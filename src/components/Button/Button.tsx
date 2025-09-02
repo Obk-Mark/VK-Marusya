@@ -11,7 +11,7 @@ export const Button = ({ handleClick, classNames, text, icon, ariaLabel, type = 
         {text}
         {icon &&
             <svg className={icon.name} width={icon.width} height={icon.height} viewBox={`0 0 ${icon.width} ${icon.height}`}>
-                <use xlinkHref={`/images/sprite.svg#${icon.name}`} />
+                <use xlinkHref={`./images/sprite.svg#${icon.name}`} />
             </svg>
         }
     </button>

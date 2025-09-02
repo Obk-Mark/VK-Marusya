@@ -26,9 +26,9 @@ export const Header = memo(() => {
                 <div className="header__wrapper">
                     <Link to={"/"} className="header__logo-link">
                         <picture className="header__logo-img">
-                            <source srcSet="/images/logo--white@2x.webp 2x, /images/logo--white.webp 1x" type="image/webp" />
-                            <source srcSet="/images/logo--white@2x.png 2x, /images/logo--white.png 1x" type="image/png" />
-                            <img src="/images/logo--white.png" alt="Логотип" width={144} height={32} />
+                            <source srcSet="./images/logo--white@2x.webp 2x, ./images/logo--white.webp 1x" type="image/webp" />
+                            <source srcSet="./images/logo--white@2x.png 2x, ./images/logo--white.png 1x" type="image/png" />
+                            <img src="./images/logo--white.png" alt="Логотип" width={144} height={32} />
                         </picture>
                     </Link>
                     <div className="header__column">
@@ -44,7 +44,7 @@ export const Header = memo(() => {
                                 className={isGenresActive ? 'header__link header__link--active' : 'header__link'}>
                                 <span className="header__link-text">Жанры</span>
                                 <svg className="header__link-icon" width={24} height={24} aria-hidden="true">
-                                    <use xlinkHref="/images/sprite.svg#genres-icon" />
+                                    <use xlinkHref="./images/sprite.svg#genres-icon" />
                                 </svg>
                             </Link>
                             <SearchMovie />

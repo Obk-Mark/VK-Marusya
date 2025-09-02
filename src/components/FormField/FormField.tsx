@@ -8,7 +8,7 @@ export const FormField: FC<FormFieldProps> = ({ children, icon, isError }) => {
             isError ? "custom-input custom-input--error" : "custom-input"
         }>
             <svg className="custom-input__icon">
-                <use xlinkHref={`/images/sprite.svg#${icon}`} />
+                <use xlinkHref={`./images/sprite.svg#${icon}`} />
             </svg>
             {children}
         </div>

@@ -13,22 +13,22 @@ export const Footer = () => {
                 <div className="footer__wrapper">
                     <a className="footer__link" href="https://vk.com/id757786339" target="_blank" aria-label="ВКонтакте">
                         <svg className="footer__icon footer__icon--vk" viewBox="0 0 19 11">
-                            <use xlinkHref="/images/sprite.svg#vk-icon" />
+                            <use xlinkHref="./images/sprite.svg#vk-icon" />
                         </svg>
                     </a>
                     <a className="footer__link" href="#" aria-label="YouTube" onClick={doNothing}>
                         <svg className="footer__icon footer__icon--youtube" viewBox="0 0 16 11">
-                            <use xlinkHref="/images/sprite.svg#youtube-icon" />
+                            <use xlinkHref="./images/sprite.svg#youtube-icon" />
                         </svg>
                     </a>
                     <a className="footer__link" href="#" aria-label="Одноклассники"  onClick={doNothing}>
                         <svg className="footer__icon footer__icon--ok" viewBox="0 0 12 19">
-                            <use xlinkHref="/images/sprite.svg#ok-icon" />
+                            <use xlinkHref="./images/sprite.svg#ok-icon" />
                         </svg>
                     </a>
                     <a className="footer__link" href="https://t.me/MrkObkh" target="_blank" aria-label="Телеграмм">
                         <svg className="footer__icon footer__icon--tme" viewBox="0 0 17 15">
-                            <use xlinkHref="/images/sprite.svg#tme-icon" />
+                            <use xlinkHref="./images/sprite.svg#tme-icon" />
                         </svg>
                     </a>
                 </div>

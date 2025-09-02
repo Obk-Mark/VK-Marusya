@@ -16,7 +16,7 @@ const ProfilePage = () => {
                             }
                         >
                             <svg width={24} height={24} aria-hidden="true" className="profile-page__link-icon">
-                                <use xlinkHref="/images/sprite.svg#heart-icon" />
+                                <use xlinkHref="./images/sprite.svg#heart-icon" />
                             </svg>
                             <span className="profile-page__link-text">Избранные фильмы</span>
                             <span className="profile-page__link-text--mobile">Избранное</span>
@@ -28,7 +28,7 @@ const ProfilePage = () => {
                             }
                         >
                             <svg width={24} height={24} aria-hidden="true" className="profile-page__link-icon">
-                                <use xlinkHref="/images/sprite.svg#user-icon" />
+                                <use xlinkHref="./images/sprite.svg#user-icon" />
                             </svg>
                             <span className="profile-page__link-text">Настройка аккаунта</span>
                             <span className="profile-page__link-text--mobile">Настройки</span>

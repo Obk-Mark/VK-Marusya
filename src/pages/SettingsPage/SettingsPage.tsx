@@ -33,7 +33,7 @@ const SettingsPage = () => {
                 <div className="user-data__item">
                     <span className="user-data__icon">
                         <svg width={24} height={24}>
-                            <use xlinkHref="/images/sprite.svg#mail-icon" />
+                            <use xlinkHref="./images/sprite.svg#mail-icon" />
                         </svg>
                     </span>
                     <div className="user-data__text-group">

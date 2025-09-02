@@ -52,7 +52,7 @@ export const SearchMovie = memo(() => {
                 <div className="search-movie__wrapper">
                     <div className="search-movie__input-wrapper">
                         <svg className="search-movie__icon" width={24} height={24}>
-                            <use xlinkHref="/images/sprite.svg#search-icon" />
+                            <use xlinkHref="./images/sprite.svg#search-icon" />
                         </svg>
                         <input
                             className="search-movie__field"
@@ -75,7 +75,7 @@ export const SearchMovie = memo(() => {
                             <svg
                                 width={24}
                                 height={24}>
-                                <use xlinkHref="/images/sprite.svg#close-icon" />
+                                <use xlinkHref="./images/sprite.svg#close-icon" />
                             </svg>
                         </button>
                     </div>
@@ -103,7 +103,7 @@ export const SearchMovie = memo(() => {
                 <div className={searchMobileActive ? 'search-movie__wrapper search-movie__wrapper--active' : 'search-movie__wrapper'}>
                     <div className="search-movie__input-wrapper">
                         <svg className="search-movie__icon" width={24} height={24}>
-                            <use xlinkHref="/images/sprite.svg#search-icon" />
+                            <use xlinkHref="./images/sprite.svg#search-icon" />
                         </svg>
                         <input
                             ref={inputRef}
@@ -127,7 +127,7 @@ export const SearchMovie = memo(() => {
                             <svg
                                 width={13}
                                 height={13}>
-                                <use xlinkHref="/images/sprite.svg#close-icon-small" />
+                                <use xlinkHref="./images/sprite.svg#close-icon-small" />
                             </svg>
                         </button>
                     </div>

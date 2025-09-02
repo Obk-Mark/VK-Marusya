@@ -26,7 +26,7 @@ export const RatingSpan = ({ rating, modified }: RatingSpanProps) => {
     return (
         <span className={className}>
             <svg className="rating-span__icon">
-                <use xlinkHref="/images/sprite.svg#star-icon" />
+                <use xlinkHref="./images/sprite.svg#star-icon" />
             </svg>
             <span className="rating-span__text">{newRating.toString().replace('.', ',')}</span>
         </span>

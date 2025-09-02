@@ -27,9 +27,9 @@ export const SearchMovieResults = ({ handleMovieSelect, searchResults }: SearchM
                                     />
                                 ) : (
                                     <picture className="search-movie-results__img">
-                                        <source srcSet="/images/empty-poster@2x.webp 2x, /images/empty-poster.webp 1x" type="image/webp" />
-                                        <source srcSet="/images/empty-poster@2x.jpg 2x, /images/empty-poster.jpg 1x" type="image/jpeg" />
-                                        <img src="/images/empty-poster" alt={movie.title} />
+                                        <source srcSet="./images/empty-poster@2x.webp 2x, ./images/empty-poster.webp 1x" type="image/webp" />
+                                        <source srcSet="./images/empty-poster@2x.jpg 2x, ./images/empty-poster.jpg 1x" type="image/jpeg" />
+                                        <img src="./images/empty-poster" alt={movie.title} />
                                     </picture>
                                 )}
 
@@ -78,9 +78,9 @@ export const SearchMovieResults = ({ handleMovieSelect, searchResults }: SearchM
                                         width={158} height={206} />
                                 ) : (
                                     <picture className="search-movie-results__img">
-                                        <source srcSet="/images/empty-poster@2x.webp 2x, /images/empty-poster.webp 1x" type="image/webp" />
-                                        <source srcSet="/images/empty-poster@2x.jpg 2x, /images/empty-poster.jpg 1x" type="image/jpeg" />
-                                        <img src="/images/empty-poster" alt={movie.title} />
+                                        <source srcSet="./images/empty-poster@2x.webp 2x, ./images/empty-poster.webp 1x" type="image/webp" />
+                                        <source srcSet="./images/empty-poster@2x.jpg 2x, ./images/empty-poster.jpg 1x" type="image/jpeg" />
+                                        <img src="./images/empty-poster" alt={movie.title} />
                                     </picture>
                                 )}
                                 <div className="search-movie-results__content">
