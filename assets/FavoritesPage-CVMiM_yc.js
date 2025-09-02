@@ -1,0 +1,1 @@
+import{b as s,r,q as a,j as o}from"./index-Cywn9ANu.js";import{M as i}from"./MoviesList-CgqTjRR0.js";import"./useFavoriteMovie-BwDHl8lX.js";const m=()=>{const{data:e}=s(t=>t.favorites);return r.useEffect(()=>{a.invalidateQueries({queryKey:["movies","favorites"]})},[]),o.jsx(i,{type:"favorites",data:e||void 0})};export{m as default};
