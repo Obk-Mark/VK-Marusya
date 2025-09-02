@@ -6,6 +6,10 @@ type MovieDescriptionProps = {
 }
 
 export const MovieDescription = ({ movie }: MovieDescriptionProps) => {
+    const movieLanguage = movie.language === "en" ? "Английский" : movie.language === "ru" ? "Русский" : movie.language;
+    const movieBudget = movie.budget ? Number(movie.budget).toLocaleString('ru-RU').replace(/,/g, ' ') : null;
+    const movieRevenue = movie.revenue ? Number(movie.revenue).toLocaleString('ru-RU').replace(/,/g, ' ') : null;
+
     return (
         <div className="movie-description">
             <h2 className="movie-description__title">
@@ -17,7 +21,7 @@ export const MovieDescription = ({ movie }: MovieDescriptionProps) => {
                         <span className="movie-description__label">Язык оригинала</span>
                         <span className="movie-description__dots"></span>
                     </span>
-                    <span className="movie-description__value">{movie.language}</span>
+                    <span className="movie-description__value">{movieLanguage}</span>
                 </li>
                 {movie.budget &&
                     <li className="movie-description__item">
@@ -25,7 +29,7 @@ export const MovieDescription = ({ movie }: MovieDescriptionProps) => {
                             <span className="movie-description__label">Бюджет</span>
                             <span className="movie-description__dots"></span>
                         </span>
-                        <span className="movie-description__value">{movie.budget}</span>
+                        <span className="movie-description__value">{movieBudget} рублей</span>
                     </li>
                 }
                 {movie.revenue &&
@@ -34,7 +38,7 @@ export const MovieDescription = ({ movie }: MovieDescriptionProps) => {
                             <span className="movie-description__label">Выручка</span>
                             <span className="movie-description__dots"></span>
                         </span>
-                        <span className="movie-description__value">{movie.revenue}</span>
+                        <span className="movie-description__value">{movieRevenue} рублей</span>
                     </li>
                 }
                 {movie.director &&
@@ -55,13 +59,15 @@ export const MovieDescription = ({ movie }: MovieDescriptionProps) => {
                         <span className="movie-description__value">{movie.production}</span>
                     </li>
                 }
-                <li className="movie-description__item">
-                    <span className="movie-description__item-column">
-                        <span className="movie-description__label">Награды</span>
-                        <span className="movie-description__dots"></span>
-                    </span>
-                    <span className="movie-description__value">{movie.status}</span>
-                </li>
+                {movie.awardsSummary &&
+                    <li className="movie-description__item">
+                        <span className="movie-description__item-column">
+                            <span className="movie-description__label">Награды</span>
+                            <span className="movie-description__dots"></span>
+                        </span>
+                        <span className="movie-description__value">{movie.awardsSummary}</span>
+                    </li>
+                }
             </ul>
         </div>
     )
