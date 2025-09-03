@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
+import {  HashRouter as Router, Route, Routes, useLocation } from "react-router-dom"
 import { Header } from "./components/Header/Header"
 import { Footer } from "./components/Footer/Footer"
 import { AuthForm } from "./components/AuthForm/AuthForm"
@@ -86,9 +86,9 @@ function AppDataLoader() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <AppContent />
-    </BrowserRouter>
+    </Router>
   )
 }
 
