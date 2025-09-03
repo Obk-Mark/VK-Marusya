@@ -4,6 +4,7 @@ import { Loader } from "../Loader/Loader";
 import { MovieCard } from "../MovieCard/MovieCard";
 import { useAppSelector } from "../../store";
 import { useRandomMovieQuery } from "../../hooks/useRandomMovieQuery";
+import { motion } from "framer-motion";
 
 export const RandomMovie = () => {
     useRandomMovieQuery();
@@ -13,15 +14,22 @@ export const RandomMovie = () => {
         <section className="random-movie">
             <Container>
                 <div className="random-movie__wrapper">
-                    {isLoading || isFetching ? (
-                        <Loader />
-                    ) : (
-                        movie ? (
-                            <MovieCard movie={movie} cardType={"mainPage"} />
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                        key={movie?.id || 'loading'} // Меняем ключ при смене фильма
+                    >
+                        {isLoading || isFetching ? (
+                            <Loader />
                         ) : (
-                            <span className="fetch-error-text">Произошла ошибка</span>
-                        )
-                    )}
+                            movie ? (
+                                <MovieCard movie={movie} cardType={"mainPage"} />
+                            ) : (
+                                <span className="fetch-error-text">Произошла ошибка</span>
+                            )
+                        )}
+                    </motion.div>
                 </div>
             </Container>
         </section>
